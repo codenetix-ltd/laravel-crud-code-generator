@@ -2,7 +2,7 @@
 
 # Laravel 5.6 CRUD stubs classes generator
 
-This generator makes life easier and helps to develop our application much faster by skipping tedious creating CRUD classes manually. Just run `php artisan make:crud Dog` and get ready to test code for your Dog entity!
+This generator makes life easier and helps to develop Laravel applications much faster by skipping tedious creation CRUD classes manually. Just run `php artisan make:crud Dog` and get ready to test code for your Dog entity!
 
 ## Supported structures out of the box
 
