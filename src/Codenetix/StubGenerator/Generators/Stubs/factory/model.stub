@@ -1,0 +1,8 @@
+<?php
+$NAMESPACE$
+use Faker\Generator as Faker;
+
+$factory->define($APPNAME$\Entities\$CLASS$::class, function (Faker $faker) {
+    return [
+    ];
+});

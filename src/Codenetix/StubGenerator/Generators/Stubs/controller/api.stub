@@ -1,0 +1,92 @@
+<?php
+
+$NAMESPACE$
+
+use $APPNAME$\Http\Requests;
+use $APPNAME$\Http\Requests\$CLASS$CreateRequest;
+use $APPNAME$\Http\Requests\$CLASS$UpdateRequest;
+use $APPNAME$\Http\Resources\$CLASS$CollectionResource;
+use $APPNAME$\Http\Resources\$CLASS$Resource;
+use $APPNAME$\Services\$CLASS$Service;
+use Illuminate\Http\Response;
+
+/**
+ * Created by Codenetix team <support@codenetix.com>
+ */
+class $CONTROLLER$Controller extends Controller
+{
+    /**
+     * @var $CLASS$Service
+     */
+    protected $service;
+
+    /**
+     * $CONTROLLER$Controller constructor.
+     * @param $CLASS$Service $service
+     */
+    public function __construct($CLASS$Service $service)
+    {
+        $this->service = $service;
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $$PLURAL$ = $this->service->list();
+        return new $CLASS$CollectionResource($$PLURAL$);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  $CLASS$CreateRequest $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store($CLASS$CreateRequest $request)
+    {
+        $$SINGULAR$ = $this->service->create($request->all());
+        return new $CLASS$Resource($$SINGULAR$);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $$SINGULAR$ = $this->service->find($id);
+        return new $CLASS$Resource($$SINGULAR$);
+    }
+
+    /**
+     * @param $CLASS$UpdateRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update($CLASS$UpdateRequest $request, $id)
+    {
+        $$SINGULAR$ = $this->service->update($request->all(), $id);
+        return new $CLASS$Resource($$SINGULAR$);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $this->service->delete($id);
+        return response()->json([], Response::HTTP_NO_CONTENT);
+    }
+}

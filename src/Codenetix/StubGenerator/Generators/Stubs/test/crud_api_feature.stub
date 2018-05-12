@@ -1,0 +1,111 @@
+<?php
+
+$NAMESPACE$
+
+use $APPNAME$\Entities\$CLASS$;
+use $APPNAME$\Http\Resources\$CLASS$CollectionResource;
+use $APPNAME$\Http\Resources\$CLASS$Resource;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Resources\Json\Resource;
+use Tests\TestCase;
+
+/**
+ * Created by Codenetix team <support@codenetix.com>
+ */
+class $CLASS$Test extends TestCase
+{
+    use RefreshDatabase;
+
+    /**
+     * Setup the test environment.
+     *
+     * @return void
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+        Resource::withoutWrapping();
+    }
+
+    /**
+     * Tests $SINGULAR$ list endpoint
+     *
+     * @return void
+     */
+    public function test$CLASS$List()
+    {
+        $$PLURAL$ = factory($CLASS$::class, 10)->create();
+
+        $response = $this->json('GET', '/api/$$PLURAL$');
+
+        $response
+            ->assertStatus(200)
+            ->assertJson((new $CLASS$CollectionResource($$PLURAL$))->resolve());
+    }
+
+    /**
+     * Tests $$SINGULAR$ get endpoint
+     *
+     * @return void
+     */
+    public function test$CLASS$Get()
+    {
+        $$PLURAL$ = factory($CLASS$::class, 10)->create();
+
+        $response = $this->json('GET', '/api/$PLURAL$/' . $$PLURAL$[0]->id);
+
+        $response
+            ->assertStatus(200)
+            ->assertJson((new $CLASS$Resource($PLURAL$[0]))->resolve());
+    }
+
+    /**
+     * Tests $SINGULAR$ store endpoint
+     *
+     * @return void
+     */
+    public function test$CLASS$Store()
+    {
+        $$SINGULAR$ = factory($CLASS$::class)->make();
+
+        $response = $this->json('POST', '/api/$PLURAL$', $$SINGULAR$->toArray());
+
+        $$SINGULAR$ = $CLASS$::first();
+
+        $response
+            ->assertStatus(201)
+            ->assertJson((new $CLASS$Resource($$SINGULAR$))->resolve());
+    }
+
+    /**
+     * Tests $SINGULAR$ update endpoint
+     *
+     * @return void
+     */
+    public function test$CLASS$Update()
+    {
+        $$SINGULAR$ = factory($CLASS$::class)->create();
+
+        $response = $this->json('PUT', '/api/$PLURAL$/' . $$SINGULAR$->id, array_only($$SINGULAR$->toArray(), $$SINGULAR$->getFillable()));
+
+        $response
+            ->assertStatus(200)
+            ->assertJson((new $CLASS$Resource($$SINGULAR$))->resolve());
+    }
+
+    /**
+     * Tests $SINGULAR$ delete endpoint
+     *
+     * @return void
+     */
+    public function test$CLASS$Delete()
+    {
+        $$SINGULAR$ = factory($CLASS$::class)->create();
+
+        $response = $this->json('DELETE', '/api/$PLURAL$/' . $$SINGULAR$->id);
+
+        $response
+            ->assertStatus(204);
+    }
+
+}

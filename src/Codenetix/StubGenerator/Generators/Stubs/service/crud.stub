@@ -1,0 +1,65 @@
+<?php
+
+$NAMESPACE$
+
+use $APPNAME$\Entities\$CLASS$;
+use $APPNAME$\Repositories\$CLASS$Repository;
+
+/**
+ * Created by Codenetix team <support@codenetix.com>
+ */
+class $SERVICE$Service
+{
+    /**
+     * @var $CLASS$Repository
+     */
+    protected $repository;
+
+    /**
+     * $CLASS$Service constructor.
+     * @param $CLASS$Repository $repository
+     */
+    public function __construct($CLASS$Repository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function list(){
+        return $this->repository->all();
+    }
+
+    /**
+     * @param int $id
+     * @return $CLASS$
+     */
+    public function find(int $id){
+        return $this->repository->find($id);
+    }
+
+    /**
+     * @param array $data
+     * @return $CLASS$
+     */
+    public function create(array $data){
+        return $this->repository->create($data);
+    }
+
+    /**
+     * @param array $data
+     * @param int $id
+     * @return mixed
+     */
+    public function update(array $data, int $id){
+        return $this->repository->update($data, $id);
+    }
+
+    /**
+     * @param int $id
+     */
+    public function delete(int $id){
+        $this->repository->delete($id);
+    }
+}
