@@ -42,7 +42,7 @@ This generator makes life easier and helps to develop Laravel applications much 
     ```
     Select `Codenetix\StubGenerator\StubGeneratorServiceProvider` from the option list
 
-## CRUD generating
+## CRUD generation
 1. Generate classes:
     ```
     $ php artisan make:crud Dog --force
