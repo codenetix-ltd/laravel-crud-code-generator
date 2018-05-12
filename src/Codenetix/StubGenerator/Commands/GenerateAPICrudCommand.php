@@ -4,6 +4,7 @@ namespace Codenetix\StubGenerator\Commands;
 
 use Codenetix\StubGenerator\Services\APICRUDGeneratorService;
 use Illuminate\Console\Command;
+use Illuminate\Support\Composer;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -23,6 +24,20 @@ class GenerateAPICrudCommand extends Command
      * @var string
      */
     protected $description = 'CRUD class stubs generator.';
+    /**
+     * @var Composer
+     */
+    private $composer;
+
+    /**
+     * GenerateAPICrudCommand constructor.
+     * @param Composer $composer
+     */
+    public function __construct(Composer $composer)
+    {
+        parent::__construct();
+        $this->composer = $composer;
+    }
 
     /**
      * Execute the command.
@@ -46,6 +61,8 @@ class GenerateAPICrudCommand extends Command
 
         $generator = new APICRUDGeneratorService(config('stub_generator'), base_path(), $name, $force);
         $generator->run();
+
+        $this->composer->dumpAutoloads();
     }
 
 
