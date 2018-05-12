@@ -53,7 +53,8 @@ class APICRUDGeneratorService
     protected function getOptions(){
         return [
             'name' => $this->entityName,
-            'force' => $this->force
+            'force' => $this->force,
+            'stub' => null
         ];
     }
 
