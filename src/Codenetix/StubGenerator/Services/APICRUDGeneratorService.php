@@ -60,17 +60,17 @@ class APICRUDGeneratorService
 
     protected function defineGenerators(){
         return [
-            new APIControllerGenerator($this->config, $this->basePath.'/src', $this->getOptions()),
-            new CollectionResourceGenerator($this->config, $this->basePath.'/src', $this->getOptions()),
-            new CRUDAPIFeatureTestGenerator($this->config, $this->basePath.'/src', $this->basePath.'/tests', $this->getOptions()),
-            new CRUDServiceGenerator($this->config, $this->basePath.'/src', $this->getOptions()),
-            new EntityGenerator($this->config, $this->basePath.'/src', $this->getOptions()),
+            new APIControllerGenerator($this->config, $this->basePath.'/app', $this->getOptions()),
+            new CollectionResourceGenerator($this->config, $this->basePath.'/app', $this->getOptions()),
+            new CRUDAPIFeatureTestGenerator($this->config, $this->basePath.'/app', $this->basePath.'/tests', $this->getOptions()),
+            new CRUDServiceGenerator($this->config, $this->basePath.'/app', $this->getOptions()),
+            new EntityGenerator($this->config, $this->basePath.'/app', $this->getOptions()),
             new MigrationGenerator($this->config, $this->basePath.'/database', $this->getOptions()),
             new ModelFactoryGenerator($this->config, $this->basePath.'/database', $this->getOptions()),
-            new RepositoryClassGenerator($this->config, $this->basePath.'/src', $this->getOptions()),
+            new RepositoryClassGenerator($this->config, $this->basePath.'/app', $this->getOptions()),
             new RepositoryInterfaceGenerator($this->config, $this->basePath.'/src', $this->getOptions()),
-            new RequestGenerator($this->config, $this->basePath.'/src', $this->getOptions()),
-            new ResourceGenerator($this->config, $this->basePath.'/src', $this->getOptions())
+            new RequestGenerator($this->config, $this->basePath.'/app', $this->getOptions()),
+            new ResourceGenerator($this->config, $this->basePath.'/app', $this->getOptions())
         ];
     }
 
