@@ -36,7 +36,7 @@ class $CLASS$Test extends TestCase
     {
         $$PLURAL$ = factory($CLASS$::class, 10)->create();
 
-        $response = $this->json('GET', '/api/$$PLURAL$');
+        $response = $this->json('GET', '/api/$PLURAL$');
 
         $response
             ->assertStatus(200)
@@ -56,7 +56,7 @@ class $CLASS$Test extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertJson((new $CLASS$Resource($PLURAL$[0]))->resolve());
+            ->assertJson((new $CLASS$Resource($$PLURAL$[0]))->resolve());
     }
 
     /**
