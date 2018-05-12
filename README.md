@@ -48,10 +48,12 @@ This generator makes life easier and helps to develop Laravel applications much 
     $ php artisan make:crud Dog --force
     ```
     > --force flag instructs the script to force override already exist classes. Be care!
+
 2. Register new routes into `routes/api.php` like:
     ```
     Route::resource('dogs', 'DogsController');
     ```
+
 3. Add Repository binding in `app/Providers/RepositoryServiceProvider.php` like:
     ```
     ...
@@ -61,10 +63,17 @@ This generator makes life easier and helps to develop Laravel applications much 
         ...
     }
     ```
-4. Run your new PHPUnit feature test
+
+4. Run newly generated migration:
+    ```
+    $ php artisan migrate
+    ```
+
+5. Run your new PHPUnit feature test
     ```
     $ vendor/bin/phpunit --filter=DogTest
     ```
+
 ## Extending
 
 TODO!
