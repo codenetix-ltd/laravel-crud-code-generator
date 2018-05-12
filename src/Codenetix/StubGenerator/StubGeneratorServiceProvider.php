@@ -24,7 +24,7 @@ class StubGeneratorServiceProvider extends ServiceProvider
         }
         
         $this->publishes([
-            __DIR__.'/../../../config/stub_generator.php' => config_path('stub_generator'),
+            __DIR__.'/../../../config/stub_generator.php' => config_path('stub_generator.php'),
         ]);
     }
 }
