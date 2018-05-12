@@ -1,4 +1,4 @@
-![https://www.codenetix.com](https://www.codenetix.com/img/codenetix-logo-light.svg "Codenetix logo")
+[![Codenetix](https://www.codenetix.com/img/codenetix-logo-light.svg)](https://www.codenetix.com/)
 
 # Laravel 5.6 CRUD stubs classes generator
 
