@@ -4,7 +4,6 @@ namespace Codenetix\StubGenerator;
 
 /**
  * Class Stub
- * @package Prettus\Repository\Generators
  */
 class Stub
 {

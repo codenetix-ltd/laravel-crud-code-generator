@@ -4,7 +4,6 @@ use Illuminate\Contracts\Config\Repository;
 
 /**
  * Class ControllerGenerator
- * @package Prettus\Repository\Generators
  */
 class APIControllerGenerator extends BaseGenerator
 {

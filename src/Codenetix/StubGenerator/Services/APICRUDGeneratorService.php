@@ -18,7 +18,6 @@ use Illuminate\Contracts\Config\Repository;
 
 /**
  * Class APICRUDGenerator
- * @package Prettus\Repository\Generators
  */
 class APICRUDGeneratorService
 {

@@ -8,8 +8,6 @@ use App\Entities\$CLASS$;
 
 /**
  * Class DocumentRepositoryEloquent.
- *
- * @package namespace App\Repositories;
  */
 class $CLASS$RepositoryEloquent extends BaseRepository implements $CLASS$Repository
 {

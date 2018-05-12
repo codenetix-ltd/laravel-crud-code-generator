@@ -10,8 +10,8 @@ This generator makes life easier and helps to develop Laravel applications much 
   * Entity controller - `app/Http/Controllers/EntityController.php`
   * Update Request - `app/Http/Requests/EntityUpdateRequest.php`
   * Create Request - `app/Http/Requests/EntityCreateRequest.php`
-  * Collection Resource - `app/Http/Resource/EntityCollectionResource.php`
-  * Single item resource - `app/Http/Resource/EntityResource.php`
+  * Collection Resource - `app/Http/Resources/EntityCollectionResource.php`
+  * Single item resource - `app/Http/Resources/EntityResource.php`
   * Model - `app/Entities/Entity.php`
   * [Repository interface](https://github.com/andersao/l5-repository) `app/Repositories/EntityRepository.php`
   * [Repository class](https://github.com/andersao/l5-repository) `app/Repositories/EntityRepositoryEloquent.php`
