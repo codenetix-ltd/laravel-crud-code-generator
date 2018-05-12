@@ -36,7 +36,7 @@ class CRUDServiceGenerator extends BaseGenerator
      */
     public function getPath()
     {
-        return $this->getBasePath() . '/Http/Services/' . $this->getServiceName() . 'Service.php';
+        return $this->getBasePath() . '/Services/' . $this->getServiceName() . 'Service.php';
     }
 
     /**
