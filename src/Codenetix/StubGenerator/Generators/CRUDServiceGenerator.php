@@ -18,7 +18,7 @@ class CRUDServiceGenerator extends BaseGenerator
      */
     public function __construct(Repository $config, $basePath, array $options)
     {
-        $options['stub'] = $options['stub'] ?: 'test/crud_api_feature';
+        $options['stub'] = $options['stub'] ?: 'service/crud';
         parent::__construct($config, $basePath, $options);
     }
 
@@ -36,7 +36,7 @@ class CRUDServiceGenerator extends BaseGenerator
      */
     public function getPath()
     {
-        return $this->getBasePath() . '/Services/' . $this->getServiceName() . 'Service.php';
+        return $this->getBasePath() . '/Http/Services/' . $this->getServiceName() . 'Service.php';
     }
 
     /**
