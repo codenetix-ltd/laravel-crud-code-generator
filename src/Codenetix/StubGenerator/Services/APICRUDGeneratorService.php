@@ -69,8 +69,8 @@ class APICRUDGeneratorService
             new ModelFactoryGenerator($this->config, $this->basePath.'/database', $this->getOptions()),
             new RepositoryClassGenerator($this->config, $this->basePath.'/app', $this->getOptions()),
             new RepositoryInterfaceGenerator($this->config, $this->basePath.'/app', $this->getOptions()),
-            new RequestGenerator($this->config, $this->basePath.'/app', array_merge($this->getOptions(), ['name' => 'Create'.$this->entityName])),
-            new RequestGenerator($this->config, $this->basePath.'/app', array_merge($this->getOptions(), ['name' => 'Update'.$this->entityName])),
+            new RequestGenerator($this->config, $this->basePath.'/app', array_merge($this->getOptions(), ['name' => $this->entityName.'Create'])),
+            new RequestGenerator($this->config, $this->basePath.'/app', array_merge($this->getOptions(), ['name' => $this->entityName.'Update'])),
             new ResourceGenerator($this->config, $this->basePath.'/app', $this->getOptions())
         ];
     }
