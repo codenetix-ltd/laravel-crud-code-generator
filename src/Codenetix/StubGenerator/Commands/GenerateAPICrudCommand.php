@@ -17,7 +17,7 @@ class GenerateAPICrudCommand extends Command
      *
      * @var string
      */
-    protected $name = 'make:api_crud';
+    protected $name = 'make:crud';
 
     /**
      * The description of command.
