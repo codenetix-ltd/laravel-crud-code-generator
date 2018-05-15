@@ -34,7 +34,7 @@ This generator makes life easier and helps to develop Laravel applications much 
     ```
 2. Run composer install:
     ```
-    $ composer require codenetix/stub-generator
+    $ composer require codenetix/stub-generator --dev
     ```
 3. Publish vendor definitions:
     ```
