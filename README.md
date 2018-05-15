@@ -38,10 +38,8 @@ This generator makes life easier and helps to develop Laravel applications much 
     ```
 3. Publish vendor definitions:
     ```
-    $ php artisan vendor:publish
+    $ php artisan vendor:publish --provider="Codenetix\StubGenerator\StubGeneratorServiceProvider"
     ```
-    Select `Codenetix\StubGenerator\StubGeneratorServiceProvider` from the option list
-
 ## CRUD generation
 1. Generate classes:
     ```
