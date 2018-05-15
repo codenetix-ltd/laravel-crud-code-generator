@@ -104,10 +104,16 @@ class GenerateAPICrudCommand extends Command
         return [
             [
                 'force',
-                'rename-old',
                 'f',
                 InputOption::VALUE_NONE,
                 'Force the creation if file already exists.',
+                null
+            ],
+            [
+                'rename-old',
+                'r',
+                InputOption::VALUE_NONE,
+                'Rename old file if already exists.',
                 null
             ],
         ];
