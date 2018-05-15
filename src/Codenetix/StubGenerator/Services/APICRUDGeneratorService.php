@@ -33,6 +33,7 @@ class APICRUDGeneratorService
     private $config;
     private $entityName;
     private $force;
+    private $renameOld;
 
     /**
      * APICRUDGeneratorService constructor.
@@ -40,20 +41,23 @@ class APICRUDGeneratorService
      * @param $basePath
      * @param $entityName
      * @param $force
+     * @param $renameOld
      */
-    public function __construct(Repository $config, $basePath, $entityName, $force)
+    public function __construct(Repository $config, $basePath, $entityName, $force, $renameOld)
     {
         $this->basePath = $basePath;
         $this->config = $config;
         $this->entityName = $entityName;
         $this->force = $force;
+        $this->renameOld = $renameOld;
     }
 
     protected function getOptions(){
         return [
             'name' => $this->entityName,
             'force' => $this->force,
-            'stub' => null
+            'stub' => null,
+            'renameOld' => $this->renameOld
         ];
     }
 

@@ -222,6 +222,10 @@ abstract class BaseGenerator
             $this->filesystem->makeDirectory($dir, 0777, true, true);
         }
 
+        if ($this->filesystem->exists($path) && $this->renameOld) {
+            $this->filesystem->move($path, $path.'.old');
+        }
+
         return $this->filesystem->put($path, $this->getStub());
     }
 

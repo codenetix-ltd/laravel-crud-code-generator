@@ -67,8 +67,9 @@ class GenerateAPICrudCommand extends Command
     {
         $name =  $this->argument('name');
         $force = $this->option('force');
+        $renameOld = $this->option('rename-old');
 
-        $generator = new APICRUDGeneratorService($this->config, base_path(), $name, $force);
+        $generator = new APICRUDGeneratorService($this->config, base_path(), $name, $force, $renameOld);
         $generator->run();
 
         $this->composer->dumpAutoloads();
@@ -103,6 +104,7 @@ class GenerateAPICrudCommand extends Command
         return [
             [
                 'force',
+                'rename-old',
                 'f',
                 InputOption::VALUE_NONE,
                 'Force the creation if file already exists.',
